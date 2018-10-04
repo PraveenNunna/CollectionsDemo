@@ -24,6 +24,16 @@ namespace CollectionsDemo.NonGeneric
 
             al.Add("Praveen");
             al.Add("Nunna");
+            al.Add(1.2);
+            al.Add(new Employee());
+
+            al.Add(45);
+            al.Add(78);
+            al.Add(33);
+            al.Add(56);
+            al.Add(12);
+            al.Add(23);
+            al.Add(9);
 
             al[0] = "test";
 

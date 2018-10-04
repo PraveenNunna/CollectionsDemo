@@ -15,7 +15,8 @@ namespace CollectionsDemo.Generic
             list.Add("B");
             //list.Add(10);
 
-            list.ForEach(l => Console.WriteLine(l));
+            List<int> intre = new List<int>();
+            list.ForEach(l => l.ToLower());
 
             list.Remove("");
 

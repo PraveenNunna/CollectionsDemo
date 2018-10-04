@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Collections.Concurrent;
 using System.Collections.ObjectModel;
 using CollectionsDemo.NonGeneric;
+using CollectionsDemo.Generic;
 
 namespace CollectionsDemo
 {
@@ -15,7 +16,7 @@ namespace CollectionsDemo
     {
         static void Main(string[] args)
         {
-            new SortedListDemo().DemoSortedList();
+            new SortedListDemo1().DemoSortedList();
             Console.ReadKey();
         }
     }

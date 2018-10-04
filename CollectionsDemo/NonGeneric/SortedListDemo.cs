@@ -8,11 +8,12 @@ namespace CollectionsDemo.NonGeneric
         public void DemoSortedList()
         {
             SortedList sortedList1 = new SortedList();
+
             sortedList1.Add(3, "Three");
             sortedList1.Add(4, "Four");
             sortedList1.Add(1, "One");
-            sortedList1.Add(5, "Five");
-            sortedList1.Add(2, "Two");
+            sortedList1.Add(2, 10);
+            sortedList1.Add(5, "Two");
 
             SortedList sortedList2 = new SortedList();
             sortedList2.Add("one", 1);
