@@ -10,7 +10,9 @@ namespace ListDemo
     {
         static void Main(string[] args)
         {
-            
+            new DictionaryDemo().DemoDictionary();
+
+            Console.ReadKey();
         }
     }
 }
