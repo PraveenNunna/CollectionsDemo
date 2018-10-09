@@ -37,7 +37,6 @@ namespace ListDemo
             var hasKey = equipmentDictionary.ContainsKey(1); //check to prevent adding duplicate keys and avoid exeptions.
 
             equipmentDictionary.Remove(5);
-            
         }
     }
 }

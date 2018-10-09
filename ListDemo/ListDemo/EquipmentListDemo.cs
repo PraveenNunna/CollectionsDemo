@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ListDemo
 {
@@ -19,30 +17,31 @@ namespace ListDemo
             equipments.Add(new Equipment("Computer", 6));
             equipments.Add(new Equipment("Connector", 5));
 
-            var dist = equipments.Distinct();
+            var dist = equipments.Distinct(); // For Distinct to work, we need to override GetHashCode methos in custom object.
 
             var group = equipments.GroupBy(e => e.Id);
 
             equipments.Sort();
 
-            equipments.Where(e => e.Id > 4);
+            var test  = equipments.Where(e => e.Id  == 4);
 
-            var names = equipments.Select(e => e.Name);
-
+            var names = equipments.Where(e => e.Id == 4).Select(e => e.Name).ToList();
 
             var newObj = new Equipment("Unit", 2);
 
-
             Console.WriteLine($"Contains test:{equipments.Contains(newObj)}"); // Won't possible if we dont have IEquatable implementation.
+
+            equipments.GetFirstEquipmentCount();
         }
     }
 
-    class Equipment : IEquatable<Equipment>, IComparable<Equipment>
+    public class Equipment : Object,IEquatable<Equipment>, IComparable<Equipment>
     {
         public string Name { get; set; }
 
         public int Id { get; set; }
 
+        
         public Equipment(string name, int id)
         {
             Name = name;
@@ -62,8 +61,22 @@ namespace ListDemo
         public int CompareTo(Equipment other)
         {
             if (other == null) return 1;
-
+            //-1 
+            // 0
+            //1
             return Id.CompareTo(other.Id);
+        }
+        public override int GetHashCode()
+        {
+            return this.Id.GetHashCode();
+        }
+    }
+
+    public static class EmployeeExtensions
+    {
+        public static int GetFirstEquipmentCount(this List<Equipment> list)
+        {
+            return list.Count(l => l.Id > 5);
         }
     }
 }

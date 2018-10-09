@@ -10,7 +10,7 @@ namespace ListDemo
     {
         static void Main(string[] args)
         {
-            new DictionaryDemo().DemoDictionary();
+            new EquipmentListDemo().DemoEquipementList();
 
             Console.ReadKey();
         }
